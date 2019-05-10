@@ -4,7 +4,12 @@
     <title>Learn Enough JavaScript</title>
     <meta charset="utf-8">
     <script>
-  		alert("hello, world!");
+      const daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday",
+      "Thursday", "Friday", "Saturday"];
+      let now = new Date();
+      let dayName = daysOfTheWeek[now.getDay()];
+  		alert(`hello, world! Happy ${dayName}`);
+      console.log('this page contains a friendly greeting')
 		</script>
   </head>
   <body>
