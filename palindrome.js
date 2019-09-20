@@ -1,8 +1,19 @@
 function reverse(string) {
-	return Array.from(string).reverse.join("")
+	return Array.from(string).reverse().join("");
 }
 
-function palindrome(string) {
-	let processedCondent = string.toLowerCase();
-	return processedCondent === reverse(processedCondent);
+function Phrase(content) {
+	this.content = content;
+
+
+	//returns true if phrase is a palindrome
+	this.palindrome = function palindrome() {
+		let processedContent = this.content.toLowerCase();
+		return processedContent === reverse(processedContent);
+	}
+
+	//LOUDER!
+	this.louder = function louder() {
+		return this.content.toUpperCase();
+	}
 }
