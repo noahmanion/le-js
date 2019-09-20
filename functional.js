@@ -41,7 +41,7 @@ console.log(functionalSingles(states));
 
 let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-function imperitiveSum(elements) {
+function imperativeSum(elements) {
 	let total = 0;
 	elements.forEach(function(n) {
 		total += n;
@@ -52,5 +52,23 @@ function imperitiveSum(elements) {
 function functionalSum(elements) {
 	return elements.reduce((total, n) => {return total += n; });
 }
-console.log(imperitiveSum(numbers));
+console.log(imperativeSum(numbers));
 console.log(functionalSum(numbers));
+
+function imperativeLengths (elements) {
+	let lengths = [];
+	elements.forEach(function (element) {
+		lengths[element] = element.length;
+	})
+	return lengths;
+}
+
+function functionalLengths (elements) {
+	return elements.reduce((lengths, element) => {
+		lengths[element] = element.length;
+		return lengths
+	}, {});
+}
+
+console.log(imperativeLengths(states));
+console.log(functionalLengths(states))
