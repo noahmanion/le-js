@@ -23,6 +23,11 @@ function Phrase(content) {
 function TranslatedPhrase (content, trasnslation) {
 	this.content = content;
 	this.translation = trasnslation;
+
+	// use processed content off of the translation rather than the content
+	this.processedContent = function processedContent () {
+		return this.translation.toLowercase();
+	}
 }
 
-TranslatedPhrase.prototyle = new Phrase();
+TranslatedPhrase.prototype = new Phrase();
