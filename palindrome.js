@@ -5,11 +5,13 @@ function reverse(string) {
 function Phrase(content) {
 	this.content = content;
 
+	this.processedContent = function processedContent() {
+		return this.content.toLowerCase();
+	}
 
 	//returns true if phrase is a palindrome
 	this.palindrome = function palindrome() {
-		let processedContent = this.content.toLowerCase();
-		return processedContent === reverse(processedContent);
+		return this.processedContent() === reverse(this.processedContent());
 	}
 
 	//LOUDER!
@@ -17,3 +19,10 @@ function Phrase(content) {
 		return this.content.toUpperCase();
 	}
 }
+
+function TranslatedPhrase (content, trasnslation) {
+	this.content = content;
+	this.translation = trasnslation;
+}
+
+TranslatedPhrase.prototyle = new Phrase();
